@@ -11,6 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140122093415) do
+
+  create_table "ministers", force: true do |t|
+    t.integer  "successive"
+    t.string   "name"
+    t.string   "tenure"
+    t.integer  "days"
+    t.integer  "age"
+    t.string   "birthdate"
+    t.string   "deathdate"
+    t.string   "birthplace"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

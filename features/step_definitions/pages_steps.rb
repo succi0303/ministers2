@@ -2,12 +2,21 @@ When /^I am in 'top page'$/ do
   visit root_path
 end
 
+When /^I am in 'list page'$/ do
+  @minister = FactoryGirl.create(:minister)
+  visit ministers_path
+end
+
 When /^I move to 'about page'$/ do
   click_link('About')
 end
 
 When /^I move to 'contact page'$/ do
   click_link('Contact')
+end
+
+When /^I move to 'list page'$/ do
+  click_link('一覧を見る')
 end
 
 Then /^I should see the page title "([^"]*)"$/ do |title|
@@ -40,6 +49,8 @@ end
 
 Then /^* should see the contents "([^"]*)"$/ do |contents|
   page.should have_content(contents)
-  page.has_content?(contents)
 end
 
+Then /^I should see the list of ministers$/ do
+  page.should have_content(@minister.name)
+end

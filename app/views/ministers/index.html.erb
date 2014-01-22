@@ -1,0 +1,29 @@
+<% provide(:title, '総理大臣一覧') %>
+<div class="container">
+  <section class="main">
+    <div class="page-header">
+      <h1>歴代内閣総理大臣の一覧</h1>
+    </div>
+
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>歴代</th>
+        <th>氏名</th>
+        <th>在職期間</th>
+        <th>在職日数</th>
+        <th>就任時年齢</th>
+        <th>詳細</th>
+      </tr>
+      <% @ministers.each do |minister| %>
+        <tr>
+          <td><%= minister.successive %></td>
+          <td><%= minister.name %></td>
+          <td><%= minister.tenure %></td>
+          <td><%= minister.days %></td>
+          <td><%= minister.age %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </table>
+  </section>
+</div>
