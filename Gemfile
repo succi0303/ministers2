@@ -7,6 +7,11 @@ gem 'rails', '4.0.0'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
+  gem 'guard-cucumber'
 end
 
 group :development do
@@ -16,9 +21,10 @@ end
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'factory_girl'
+  gem 'growl'
 end
 
 gem 'sass-rails', '~> 4.0.0'

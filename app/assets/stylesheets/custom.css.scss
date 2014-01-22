@@ -1,0 +1,24 @@
+/* universal */
+
+section.main {
+  margin-top: 51px; // accommodate navbar
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+/* site-header */
+div.navbar-header {
+  a.navbar-brand {
+    color: #fff;
+    font-size: 1.2em;
+  }
+}
+
+/* site-footer */
+footer.site-footer {
+  border-top: 1px solid #e5e5e5;
+  color: #777777;
+  margin-top: 100px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
