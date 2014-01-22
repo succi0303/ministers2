@@ -1,0 +1,41 @@
+<% provide(:title, @minister.name) %>
+
+<div class="container">
+  <section class="main row">
+    <aside class="col-md-3">
+    </aside>
+    <article class="col-md-9">
+      <div class="page-header">
+        <h1>
+          <%= @minister.name %>
+          <small>第<%= @minister.successive %>代 内閣総理大臣</small>
+        </h1>
+      </div>
+      <div class="profile row">
+        <div class="col-md-6">
+          <%= image_tag "ministers/#{@minister.successive}.jpg", alt: 'portrait',
+            size: '300x370', class: 'img-thumbnail' %>
+        </div>
+        <div class="col-md-6">
+          <dl>
+            <dt>在職期間</dt>
+            <dd><%= @minister.tenure %></dd>
+            <dt>在職日数</dt>
+            <dd><%= @minister.days %></dd>
+            <dt>就任時年齢</dd>
+            <dd><%= @minister.age %></dd>
+            <dt>生年月日</dt>
+            <dd><%= @minister.birthdate %></dd>
+            <dt>死去年月日</dt>
+            <dd><%= @minister.deathdate %></dd>
+            <dt>出身地</dt>
+            <dd><%= @minister.birthplace %></dd>
+          </dl>
+        </div>
+      </div>
+      <footer class="article-footer">
+        <%= link_to '一覧に戻る', ministers_path, class: 'btn btn-default' %>
+      </footer>
+    </article>
+  </section>
+</div>

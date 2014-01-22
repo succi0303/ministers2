@@ -39,4 +39,5 @@ describe "ministers/index.html.erb" do
   it { should have_content('544') }
   it { should have_content('47') }
 
+  it { should have_link('詳細', minister_path('1')) }
 end

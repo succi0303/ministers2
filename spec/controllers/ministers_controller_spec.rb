@@ -21,4 +21,20 @@ describe MinistersController do
 
   end
 
+  describe "GET 'show'" do
+
+    let(:minister) { FactoryGirl.create(:minister) }
+
+    before do
+      get :show, id: minister.id
+    end
+
+    it { should be_success }
+    it { should render_template(:show) }
+
+    it "should assigns @minister" do
+      expect(assigns(:minister)).to eq(minister)
+    end
+  end
+
 end

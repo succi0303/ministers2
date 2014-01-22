@@ -1,1 +1,1 @@
-features/list.feature:12
+features/detail.feature:6

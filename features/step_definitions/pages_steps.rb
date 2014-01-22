@@ -19,6 +19,11 @@ When /^I move to 'list page'$/ do
   click_link('一覧を見る')
 end
 
+When /^I move to 'detail page' of "([^"]*)"$/ do |minister_name|
+  @minister.name = minister_name
+  click_link('詳細')
+end
+
 Then /^I should see the page title "([^"]*)"$/ do |title|
   page.should have_title(title)
 end
