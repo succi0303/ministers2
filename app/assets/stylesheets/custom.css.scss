@@ -2,7 +2,7 @@
 
 section.main {
   margin-top: 51px; // accommodate navbar
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   width: 100%;
 }
 
@@ -16,11 +16,7 @@ div.navbar-header {
 
 /* site-footer */
 footer.site-footer {
-  border-top: 1px solid #e5e5e5;
-  color: #777777;
-  margin-top: 0;
-  padding-top: 20px;
-  padding-bottom: 30px;
+  margin-top: 20px;
 }
 
 /* profile */
@@ -32,5 +28,16 @@ div.profile {
 footer.article-footer {
   border-top: 1px solid #e5e5e5;
   text-align: right;
-  padding-top: 40px;
+  padding-top: 20px;
+}
+
+/* social-buttons */
+ul#social-buttons {
+  list-style: none;
+
+  li {
+    display: inline;
+    margin: 0 5px 0 0;
+    padding: 0;
+  }
 }
