@@ -2,39 +2,38 @@ require 'spec_helper'
 
 describe MinistersController do
 
-  subject { response }
+  let(:minister) { create(:minister) }
 
-  describe "GET 'index'" do
+  describe 'GET #index' do
 
-    let(:minister) { FactoryGirl.create(:minister) }
-
-    before do
+    before :each do
       get :index
     end
 
-    it { should be_success }
-    it { should render_template(:index) }
+    it "populates an array of ministers" do
+      expect(assigns(:ministers)).to match_array([minister])
+    end
 
-    it "should assings @ministers" do
-      expect(assigns(:ministers)).to eq([minister])
+    it "renders the :index template" do
+      expect(response).to render_template :index
     end
 
   end
 
-  describe "GET 'show'" do
+  describe 'GET #show' do
 
-    let(:minister) { FactoryGirl.create(:minister) }
-
-    before do
-      get :show, id: minister.id
+    before :each do
+      get :show, id: minister
     end
 
-    it { should be_success }
-    it { should render_template(:show) }
-
-    it "should assigns @minister" do
-      expect(assigns(:minister)).to eq(minister)
+    it "assigns the requested contact to @minister" do
+      expect(assigns(:minister)).to eq minister
     end
+
+    it "renders the :show template" do
+      expect(response).to render_template :show
+    end
+
   end
 
 end
