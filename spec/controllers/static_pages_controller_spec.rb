@@ -2,36 +2,25 @@ require 'spec_helper'
 
 describe StaticPagesController do
 
-  subject { response }
-
-  describe "GET 'index'" do
-
-    before do
+  describe 'GET #index' do
+    it "renders the :index template" do
       get :index
+      expect(response).to render_template :index
     end
-
-    it { should be_success }
-    it { should render_template(:index) }
   end
 
-  describe "GET 'about'" do
-
-    before do
+  describe 'GET #about' do
+    it "renders the :about template" do
       get :about
+      expect(response).to render_template :about
     end
-
-    it { should be_success }
-    it { should render_template(:about) }
   end
 
-  describe "GET 'contact'" do
-
-    before do
+  describe 'GET #contact' do
+    it "renders the :contact template" do
       get :contact
+      expect(response).to render_template :contact
     end
-
-    it { should be_success }
-    it { should render_template(:contact) }
   end
 
 end
