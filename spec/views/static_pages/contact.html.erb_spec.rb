@@ -6,4 +6,8 @@ describe "static_pages/contact.html.erb" do
     expect(render).to have_content('お問い合わせ')
   end
 
+  it "have font-awesome icons" do
+    expect(render).to have_selector('i.fa')
+  end
+
 end
