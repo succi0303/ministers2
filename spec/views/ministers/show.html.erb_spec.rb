@@ -16,18 +16,40 @@ describe "ministers/show.html.erb" do
     ))
   end
 
-  subject { render }
+  it "have portrait of the minister" do
+    expect(render).to have_selector('img[alt="portrait"]')
+  end
 
-  it { should have_selector('img[alt="portrait"]') }
+  it "have name of the minister" do
+    expect(render).to have_content('伊藤博文')
+  end
 
-  it { should have_content('伊藤博文') }
-  it { should have_content('明治18.12.22−明治21.4.30') }
-  it { should have_content('861') }
-  it { should have_content('44') }
-  it { should have_content('天保12.9.2') }
-  it { should have_content('明治42.10.26') }
-  it { should have_content('山口県') }
+  it "have tenure of the minister" do
+    expect(render).to have_content('明治18.12.22−明治21.4.30')
+  end
 
-  it { should have_link('一覧に戻る', ministers_path)}
+  it "have days of the minister" do
+    expect(render).to have_content('861')
+  end
+
+  it "have age of the minister" do
+    expect(render).to have_content('44')
+  end
+
+  it "have birthdate of the minister" do
+    expect(render).to have_content('天保12.9.2')
+  end
+
+  it "have deathdate of the minister" do
+    expect(render).to have_content('明治42.10.26')
+  end
+
+  it "have birthplace of the minister" do
+    expect(render).to have_content('山口県')
+  end
+
+  it "have link to ministers_path" do
+    expect(render).to have_link('一覧に戻る', ministers_path)
+  end
   
 end
