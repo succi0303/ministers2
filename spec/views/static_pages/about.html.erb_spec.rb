@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe 'static_pages/about.html.erb' do
 
-  subject { render }
+  it "have page title" do
+    expect(render).to have_content('このサイトについて')
+  end
 
-  it { should have_content('このサイトについて')}
 end

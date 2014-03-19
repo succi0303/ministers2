@@ -23,22 +23,39 @@ describe "ministers/index.html.erb" do
     ])
   end
 
-  subject { render }
+  it "have page header '歴代内閣総理大臣の一覧'" do
+    expect(render).to have_content('歴代内閣総理大臣の一覧')
+  end
 
-  it { should have_content('歴代内閣総理大臣の一覧')}
+  describe "table of ministers" do
 
-  it { should have_content('1') }
-  it { should have_content('伊藤博文') }
-  it { should have_content('明治18.12.22−明治21.4.30') }
-  it { should have_content('861') }
-  it { should have_content('44') }
+    it "have successive '1'" do
+      expect(render).to have_content('1')
+    end
 
-  it { should have_content('2') }
-  it { should have_content('黒田清隆') }
-  it { should have_content('明治21.4.30−明治22.10.25') }
-  it { should have_content('544') }
-  it { should have_content('47') }
+    it "have name '伊藤博文'" do
+      expect(render).to have_content('伊藤博文')
+    end
 
-  it { should have_link('詳細', minister_path('1')) }
-  it { should have_link('先頭へ戻る', '#') }
+    it "have tenure '明治18.12.22-明治21.4.30'" do
+      expect(render).to have_content('明治18.12.22−明治21.4.30')
+    end
+
+    it "have days '861'" do
+      expect(render).to have_content('544')
+    end
+
+    it "have age '44'" do
+      expect(render).to have_content('44')
+    end
+
+    it "have link to ministers_path" do
+      expect(render).to have_link('詳細', ministers_path('1'))
+    end
+  end
+
+  it "have link to pagetop" do
+    expect(render).to have_link('先頭へ戻る', '#pagetop')
+  end
+
 end
