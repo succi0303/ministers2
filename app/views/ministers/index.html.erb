@@ -1,5 +1,5 @@
 <% provide(:title, '総理大臣一覧') %>
-<div class="container">
+<div class="container" id="pagetop">
   <section class="main">
     <div class="page-header">
       <h1>歴代内閣総理大臣の一覧</h1>
@@ -27,5 +27,7 @@
         </tr>
       <% end %>
     </table>
+
+    <%= link_to '先頭へ戻る', '#pagetop', class: 'btn btn-warning btn-lg', id: 'return-to-top' %>
   </section>
 </div>
